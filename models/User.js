@@ -2,15 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-    name: { type: String, required: true },
-    lastname: { type: String, required: true },
-    email: { type: String, required: true },
+    name: {type: String, required: true},
+    lastName: {type: String, required: true},
+    gender: {type: Boolean, default: true},
+    email: {type: String, required: true},
     address: String,
-    phoneNumber: String,
-    password: { type: String, required: true },
-    activated: { type: Boolean, default: false },
-    role: { type: Number, default: 1 },
-    avatar: String
+    phone: String,
+    password: {type: String, required: true},
+    role: {type: Number, default: 1},
+    activated: {type: Boolean, default: false},
+    avatarUrl: String
 });
 
 module.exports = mongoose.model('User', User);
